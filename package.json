@@ -12,6 +12,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "parcel": "^2.10.2"
+    "parcel": "^2.10.2",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.1"
   }
 }
