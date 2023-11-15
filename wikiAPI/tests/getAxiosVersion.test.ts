@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { getAxiosVersion } from "../getAxiosVersion";
+import { getAxiosVersion } from "../util/getAxiosVersion";
 import { test } from "mocha";
 
 
