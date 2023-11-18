@@ -6,6 +6,7 @@
   "scripts": {
     "test": "ts-mocha",
     "test:inspect": "ts-mocha inspect",
+    "test:watch": "ts-mocha --watch",
     "clean": "rm -f ./dist/*",
     "prebuild": "npm run clean",
     "build": "parcel build"
