@@ -5,7 +5,7 @@ import { test } from "mocha";
 import { getRandomRevId } from "./getRandomRevId";
 
 test("filters out a single immediately reverted edit", () => {
-  const originalEditByteDifference = 30;
+  const revertedEditByteDifference = 30;
   const originalEditSize = 100;
   const immediatelyRevertEditId = 1234567890;
 
@@ -13,14 +13,14 @@ test("filters out a single immediately reverted edit", () => {
     {
       revid: immediatelyRevertEditId,
       tags: ["mw-manual-revert"],
-      size: originalEditSize - originalEditByteDifference,
-      byteDifference: -originalEditByteDifference,
+      size: originalEditSize - revertedEditByteDifference,
+      byteDifference: -revertedEditByteDifference,
     },
     {
       revid: getRandomRevId(),
       tags: [],
       size: originalEditSize,
-      byteDifference: originalEditByteDifference
+      byteDifference: revertedEditByteDifference
     },
   ];
 
