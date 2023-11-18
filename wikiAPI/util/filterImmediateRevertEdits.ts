@@ -11,7 +11,7 @@ export default function filterImmediatelyRevertEdits(
   for (const [index, curRevision] of revisions.entries()) {
     const prevRevision = revisions[index + 1];
 
-    const prevRevisionExists = prevRevision !== undefined
+    const prevRevisionExists = prevRevision !== undefined;
     if (!prevRevisionExists) {
       continue;
     }
@@ -19,7 +19,8 @@ export default function filterImmediatelyRevertEdits(
     const hasManualRevertTag =
       revisions[index].tags.includes("mw-manual-revert");
 
-    const correspondingByteDifference = -prevRevision.byteDifference === curRevision.byteDifference;
+    const correspondingByteDifference =
+      -prevRevision.byteDifference === curRevision.byteDifference;
 
     if (hasManualRevertTag && correspondingByteDifference) {
       immediatelyRevertedEdits.push(curRevision.revid);
