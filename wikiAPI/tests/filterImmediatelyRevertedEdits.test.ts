@@ -5,55 +5,58 @@ import { test } from "mocha";
 import { getRandomRevId } from "./getRandomRevId";
 
 test("filters out a single immediately reverted edit", () => {
-  const immediatelyRevertedEdit = {
-    Id: 1234567890,
-    size: 123,
-  };
+  const originalEditByteDifference = 30;
+  const originalEditSize = 100;
+  const immediatelyRevertEditId = 1234567890;
 
-  const revisionArray: revision[] = [
+  const revisionArray  = [
     {
-      revid: immediatelyRevertedEdit.Id,
-      size: immediatelyRevertedEdit.size,
+      revid: immediatelyRevertEditId,
       tags: ["mw-manual-revert"],
+      size: originalEditSize - originalEditByteDifference,
+      byteDifference: -originalEditByteDifference,
     },
     {
-      revid: 113081298,
-      size: immediatelyRevertedEdit.size,
+      revid: getRandomRevId(),
       tags: [],
+      size: originalEditSize,
+      byteDifference: originalEditByteDifference
     },
   ];
 
   expect(filterImmediatelyRevertEdits(revisionArray)[0]).to.equal(
-    immediatelyRevertedEdit.Id,
+    immediatelyRevertEditId,
   );
 });
 
 test("filters out a single immediately reverted edit", () => {
-  const immediatelyRevertedEdit = {
-    Id: 1234567890,
-    Size: 123,
-  };
+  const revertedEditByteDifference = 50;
+  const originalEditSize = 100;
+  const immediatelyRevertEditId = 1234567890;
 
-  const revisionArray: revision[] = [
+  const revisionArray = [
     {
-      revid: getRandomRevId(),
-      size: 1928,
-      tags: [],
-    },
-    {
-      revid: immediatelyRevertedEdit.Id,
-      size: immediatelyRevertedEdit.Size,
+      revid: immediatelyRevertEditId,
+      size: originalEditSize - revertedEditByteDifference,
       tags: ["mw-manual-revert"],
+      byteDifference: -revertedEditByteDifference
     },
     {
       revid: 113081298,
-      size: immediatelyRevertedEdit.Size,
+      size: originalEditSize + revertedEditByteDifference,
       tags: [],
+      byteDifference: revertedEditByteDifference
+    },
+    {
+      revid: getRandomRevId(),
+      size: originalEditSize,
+      tags: [],
+      byteDifference: 0
     },
   ];
 
   expect(
     filterImmediatelyRevertEdits(revisionArray)[0],
     "filters right rev id",
-  ).to.equal(immediatelyRevertedEdit.Id);
+  ).to.equal(immediatelyRevertEditId);
 });
