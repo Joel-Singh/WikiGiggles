@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "ts-mocha",
+    "test:inspect": "ts-mocha inspect",
     "clean": "rm -f ./dist/*",
     "prebuild": "npm run clean",
     "build": "parcel build"
