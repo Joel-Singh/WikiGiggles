@@ -9,7 +9,7 @@ test("filters out a single immediately reverted edit", () => {
   const originalEditSize = 100;
   const immediatelyRevertEditId = 1234567890;
 
-  const revisionArray  = [
+  const revisionArray = [
     {
       revid: immediatelyRevertEditId,
       tags: ["mw-manual-revert"],
@@ -20,7 +20,7 @@ test("filters out a single immediately reverted edit", () => {
       revid: getRandomRevId(),
       tags: [],
       size: originalEditSize,
-      byteDifference: revertedEditByteDifference
+      byteDifference: revertedEditByteDifference,
     },
   ];
 
@@ -39,19 +39,19 @@ test("filters out a single immediately reverted edit", () => {
       revid: immediatelyRevertEditId,
       size: originalEditSize - revertedEditByteDifference,
       tags: ["mw-manual-revert"],
-      byteDifference: -revertedEditByteDifference
+      byteDifference: -revertedEditByteDifference,
     },
     {
       revid: 113081298,
       size: originalEditSize + revertedEditByteDifference,
       tags: [],
-      byteDifference: revertedEditByteDifference
+      byteDifference: revertedEditByteDifference,
     },
     {
       revid: getRandomRevId(),
       size: originalEditSize,
       tags: [],
-      byteDifference: 0
+      byteDifference: 0,
     },
   ];
 

@@ -45,23 +45,23 @@ test("Add byte difference to four revisions", () => {
     {
       revid: getRandomRevId(),
       size: 3,
-      tags: []
+      tags: [],
     },
     {
       revid: getRandomRevId(),
       size: 5,
-      tags: []
+      tags: [],
     },
     {
       revid: getRandomRevId(),
       size: 1,
-      tags: []
+      tags: [],
     },
     {
       revid: getRandomRevId(),
       size: 0,
-      tags: []
-    }
+      tags: [],
+    },
   ];
 
   const revisionsWithByteDifference = addByteDifferenceToRevisions(revisions);
