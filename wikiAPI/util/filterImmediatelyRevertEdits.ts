@@ -3,7 +3,7 @@ import revision from "./revision";
 /**
   // @returns array of revision ids
  */
-export default function filterImmediatelyRevertedEdits(
+export default function filterImmediatelyRevertEdits(
   revisions: revision[],
 ): number[] {
   let immediatelyRevertedEdits: number[] = [];

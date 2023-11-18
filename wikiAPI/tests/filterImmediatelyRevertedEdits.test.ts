@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import filterImmediatelyRevertedEdits from "../util/filterImmediatelyRevertedEdits";
+import filterImmediatelyRevertEdits from "../util/filterImmediatelyRevertEdits";
 import revision from "../util/revision";
 import { test } from "mocha";
 
@@ -22,7 +22,7 @@ test("filters out a single immediately reverted edit", () => {
     },
   ];
 
-  expect(filterImmediatelyRevertedEdits(revisionArray)[0]).to.equal(
+  expect(filterImmediatelyRevertEdits(revisionArray)[0]).to.equal(
     immediatelyRevertedEdit.Id,
   );
 });
@@ -52,7 +52,7 @@ test("filters out a single immediately reverted edit", () => {
   ];
 
   expect(
-    filterImmediatelyRevertedEdits(revisionArray)[0],
+    filterImmediatelyRevertEdits(revisionArray)[0],
     "filters right rev id",
   ).to.equal(immediatelyRevertedEdit.Id);
 });
