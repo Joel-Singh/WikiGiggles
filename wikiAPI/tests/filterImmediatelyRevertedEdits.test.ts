@@ -2,6 +2,7 @@ import { expect } from "chai";
 import filterImmediatelyRevertEdits from "../util/filterImmediatelyRevertEdits";
 import revision from "../util/revision";
 import { test } from "mocha";
+import { getRandomRevId } from "./getRandomRevId";
 
 test("filters out a single immediately reverted edit", () => {
   const immediatelyRevertedEdit = {
@@ -56,16 +57,3 @@ test("filters out a single immediately reverted edit", () => {
     "filters right rev id",
   ).to.equal(immediatelyRevertedEdit.Id);
 });
-
-function getRandomRevId() {
-  function generateRandomDigit() {
-    return Math.floor(Math.random() * 10);
-  }
-
-  let id = "";
-  for (let i = 1; i <= 10; i++) {
-    id += generateRandomDigit();
-  }
-
-  return parseInt(id);
-}
