@@ -6,18 +6,18 @@ import { test } from "mocha";
 test("filters out a single immediately reverted edit", () => {
   const immediatelyRevertedEdit = {
     Id: 1234567890,
-    Size: 123
+    size: 123
   }
 
   const revisionArray: revision[] = [
     {
       revid: immediatelyRevertedEdit.Id,
-      size: immediatelyRevertedEdit.Size,
+      size: immediatelyRevertedEdit.size,
       tags: ["mw-manual-revert"],
     },
     {
       revid: 113081298,
-      size: immediatelyRevertedEdit.Size,
+      size: immediatelyRevertedEdit.size,
       tags: [],
     },
   ];
