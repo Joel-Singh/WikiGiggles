@@ -6,8 +6,8 @@ import { test } from "mocha";
 test("filters out a single immediately reverted edit", () => {
   const immediatelyRevertedEdit = {
     Id: 1234567890,
-    size: 123
-  }
+    size: 123,
+  };
 
   const revisionArray: revision[] = [
     {
@@ -30,8 +30,8 @@ test("filters out a single immediately reverted edit", () => {
 test("filters out a single immediately reverted edit", () => {
   const immediatelyRevertedEdit = {
     Id: 1234567890,
-    Size: 123
-  }
+    Size: 123,
+  };
 
   const revisionArray: revision[] = [
     {
@@ -51,9 +51,10 @@ test("filters out a single immediately reverted edit", () => {
     },
   ];
 
-  expect(filterImmediatelyRevertedEdits(revisionArray)[0], "filters right rev id").to.equal(
-    immediatelyRevertedEdit.Id,
-  );
+  expect(
+    filterImmediatelyRevertedEdits(revisionArray)[0],
+    "filters right rev id",
+  ).to.equal(immediatelyRevertedEdit.Id);
 });
 
 function getRandomRevId() {
@@ -61,8 +62,8 @@ function getRandomRevId() {
     return Math.floor(Math.random() * 10);
   }
 
-  let id = ''
-  for(let i = 1; i <= 10; i++) {
+  let id = "";
+  for (let i = 1; i <= 10; i++) {
     id += generateRandomDigit();
   }
 
