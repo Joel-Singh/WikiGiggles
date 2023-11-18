@@ -23,6 +23,5 @@ export default function filterImmediatelyRevertedEdits(
       immediatelyRevertedEdits.push(curRevision.revid);
     }
   }
-  debugger;
   return immediatelyRevertedEdits;
 }
