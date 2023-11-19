@@ -2,7 +2,7 @@ import { expect } from "chai";
 import filterImmediateRevertEdits from "../util/filterImmediateRevertEdits";
 import revision from "../util/revision";
 import { test } from "mocha";
-import { getRandomRevId } from "./getRandomRevId";
+import { getRandomRevId } from "./util/getRandomRevId";
 
 test("filters out a single immediately reverted edit", () => {
   const revertedEditByteDifference = 30;

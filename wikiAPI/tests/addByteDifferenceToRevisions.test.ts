@@ -1,6 +1,6 @@
 import { test } from "mocha";
 import revision from "../util/revision";
-import { getRandomRevId } from "./getRandomRevId";
+import { getRandomRevId } from "./util/getRandomRevId";
 import addByteDifferenceToRevisions from "../util/addByteDifferenceToRevisions";
 import { expect } from "chai";
 
