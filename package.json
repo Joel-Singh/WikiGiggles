@@ -2,6 +2,7 @@
   "name": "data-analysis-project",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "test": "ts-mocha",
     "test:inspect": "ts-mocha inspect",
