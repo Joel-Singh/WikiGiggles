@@ -11,7 +11,9 @@
     "prebuild": "npm run clean",
     "dev": "vite",
     "build": "vite build",
+    "prepreview": "npm run build",
     "preview": "vite preview",
+    "preview:watch": "nodemon --ext svelte,ts --exec 'npm run preview'",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "author": "",
@@ -21,20 +23,20 @@
     "typescript": "^5.2.2"
   },
   "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "@tsconfig/svelte": "^5.0.2",
     "@types/chai": "^4.3.10",
     "@types/mocha": "^10.0.4",
     "chai": "^4.3.10",
     "mocha": "^10.2.0",
     "nodemon": "^3.0.1",
-    "ts-mocha": "^10.0.0",
-    "ts-node": "^10.9.1",
-    "typescript-svelte-plugin": "^0.3.35",
-    "@sveltejs/vite-plugin-svelte": "^3.0.0",
-    "@tsconfig/svelte": "^5.0.2",
     "svelte": "^4.2.3",
     "svelte-check": "^3.6.0",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.1",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
+    "typescript-svelte-plugin": "^0.3.35",
     "vite": "^5.0.0"
   }
 }
