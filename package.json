@@ -8,7 +8,11 @@
     "test:inspect": "ts-mocha inspect",
     "test:watch": "ts-mocha --watch",
     "clean": "rm -f ./dist/*",
-    "prebuild": "npm run clean"
+    "prebuild": "npm run clean",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "author": "",
   "license": "ISC",
@@ -22,9 +26,15 @@
     "chai": "^4.3.10",
     "mocha": "^10.2.0",
     "nodemon": "^3.0.1",
-    "svelte": "^4.2.5",
     "ts-mocha": "^10.0.0",
     "ts-node": "^10.9.1",
-    "typescript-svelte-plugin": "^0.3.35"
+    "typescript-svelte-plugin": "^0.3.35",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "@tsconfig/svelte": "^5.0.2",
+    "svelte": "^4.2.3",
+    "svelte-check": "^3.6.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
   }
 }
