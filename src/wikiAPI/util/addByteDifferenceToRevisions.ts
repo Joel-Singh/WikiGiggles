@@ -1,4 +1,4 @@
-import revision from "./revision";
+import type revision from "./revision";
 
 export type revisionWithByteDifference = revision & { byteDifference: number };
 export default function addByteDifferenceToRevisions(

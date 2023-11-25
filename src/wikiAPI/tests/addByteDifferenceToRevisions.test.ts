@@ -1,5 +1,5 @@
 import { test } from "mocha";
-import revision from "../util/revision";
+import type revision from "../util/revision";
 import { getRandomRevId } from "./util/getRandomRevId";
 import addByteDifferenceToRevisions from "../util/addByteDifferenceToRevisions";
 import { expect } from "chai";

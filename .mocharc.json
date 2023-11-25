@@ -1,4 +1,4 @@
 {
-  "spec": "./wikiAPI/**/*.test.ts",
-  "watch-files": ["./wikiAPI/**/*.ts"]
+  "spec": "./src/**/*.test.ts",
+  "watch-files": ["./src/**/*.test.ts"]
 }

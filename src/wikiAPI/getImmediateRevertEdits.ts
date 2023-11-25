@@ -1,7 +1,7 @@
 import sendWikipediaAPIRequest from "./sendWikipediaAPIRequest";
 import addByteDifferenceToRevisions from "./util/addByteDifferenceToRevisions";
 import filterImmediateRevertEdits from "./util/filterImmediateRevertEdits";
-import revision from "./util/revision";
+import type revision from "./util/revision";
 
 export default async function getImmediateRevertEdits(page: string) {
   const mostRecent500RevisionsParams = {

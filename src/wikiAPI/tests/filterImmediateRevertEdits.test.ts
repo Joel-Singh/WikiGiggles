@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import filterImmediateRevertEdits from "../util/filterImmediateRevertEdits";
-import revision from "../util/revision";
+import type revision from "../util/revision";
 import { test } from "mocha";
 import { getRandomRevId } from "./util/getRandomRevId";
 

@@ -1,5 +1,5 @@
-import { revisionWithByteDifference } from "./addByteDifferenceToRevisions";
-import revision from "./revision";
+import { type revisionnWithByteDifference } from "./addByteDifferenceToRevisions";
+import type revision from "./revision";
 
 /**
   // @returns array of revision ids
