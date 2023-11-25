@@ -4,9 +4,9 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "test": "ts-mocha",
-    "test:inspect": "ts-mocha inspect",
-    "test:watch": "ts-mocha --watch",
+    "test": "node --import tsx node_modules/mocha/bin/mocha.js",
+    "test:inspect": "npm test -- inspect",
+    "test:watch": "npm test -- watch",
     "clean": "rm -rf ./dist/*",
     "prebuild": "npm run clean",
     "dev": "vite",
@@ -32,9 +32,8 @@
     "nodemon": "^3.0.1",
     "svelte": "^4.2.3",
     "svelte-check": "^3.6.0",
-    "ts-mocha": "^10.0.0",
-    "ts-node": "^10.9.1",
     "tslib": "^2.6.2",
+    "tsx": "^4.5.0",
     "typescript": "^5.2.2",
     "typescript-svelte-plugin": "^0.3.35",
     "vite": "^5.0.0"
