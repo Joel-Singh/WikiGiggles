@@ -1,1 +1,2 @@
 - All requests are in series as per MediaWiki etiquette
+- Packages were downgraded because of node polyfill. Once node polyfill is updated, update everything
