@@ -2,6 +2,7 @@ import axios, { type AxiosResponse } from "axios";
 import { getAxiosVersion } from "./util/getAxiosVersion";
 
 export default function sendWikipediaAPIRequest(params: Object) {
+  params = { ...params, origin: "*"}
   const wikiAPIEndpoint = `https://en.wikipedia.org/w/api.php`;
 
   const headers = {
