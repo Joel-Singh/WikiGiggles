@@ -16,5 +16,6 @@
   >
   <div id="immediate-revisions">{immediateRevisions}</div>
 </main>
+
 <style>
 </style>
