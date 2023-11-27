@@ -1,11 +1,21 @@
 :root {
-  --black: #000000;
-  --white: #FFFFFF;
-  --green: #67736A;
-  --light-green: #AFC2B2;
-  --dark-green: #3E4A43;
+  --purple: #E78FFF;
+  --orange: #FFE68F;
+  --yellow: #E1FF8F;
+  --red: #FF7EA2;
+  --pale: #FFECE5;
+  --black: black;
 }
 
 body {
-  margin: 0;
+  background: linear-gradient(191deg, var(--purple) 34%, var(--red) 67%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+button {
+  background-color: var(--pale);
+  color: var(--black);
+  border: none;
 }

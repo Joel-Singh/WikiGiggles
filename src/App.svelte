@@ -18,4 +18,9 @@
 </main>
 
 <style>
+  main {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+  }
 </style>
