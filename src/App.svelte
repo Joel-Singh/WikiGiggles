@@ -9,18 +9,17 @@
   };
 </script>
 
-<main>
-  <input bind:value={pageToSearch} class="page-to-search" type="text" />
-  <button on:click={searchForImmediateRevisions} type="button"
-    >Search for immediate revisions</button
+<main class="h-full pt-3 flex flex-col items-center gap-2">
+  <input
+    bind:value={pageToSearch}
+    class="p-1 py-0.5 w-5/6 justify-self-center"
+    type="text"
+  />
+  <button
+    on:click={searchForImmediateRevisions}
+    type="button"
+    class="w-2/5 justify-self-center">Search for immediate revisions</button
   >
+
   <div id="immediate-revisions">{immediateRevisions}</div>
 </main>
-
-<style>
-  main {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 10px;
-  }
-</style>

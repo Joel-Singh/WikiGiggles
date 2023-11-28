@@ -1,21 +1,23 @@
-:root {
-  --purple: #E78FFF;
-  --orange: #FFE68F;
-  --yellow: #E1FF8F;
-  --red: #FF7EA2;
-  --pale: #FFECE5;
-  --black: black;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button[type="button"], input {
+  @apply hover:bg-slate-200;
+  @apply bg-slate-400;
+
+  @apply hover:text-sky-800;
+  @apply text-sky-100;
+  @apply rounded-lg;
+  @apply border-solid;
+  @apply border-black;
+  @apply border-2;
 }
 
 body {
-  background: linear-gradient(191deg, var(--purple) 34%, var(--red) 67%);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
+  @apply p-1;
+  @apply bg-slate-700;
+  @apply text-sky-500;
+  @apply h-screen
 }
 
-button {
-  background-color: var(--pale);
-  color: var(--black);
-  border: none;
-}
