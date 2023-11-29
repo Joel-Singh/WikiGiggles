@@ -1,5 +1,5 @@
 <script lang="ts">
-  import FunnySearcher from "./components/funnySearcher.svelte";
+  import FunnySearcher from "./components/funnyRevisionSearcher.svelte";
 </script>
 
 <main class="h-full pt-3 flex flex-col items-center gap-2">
