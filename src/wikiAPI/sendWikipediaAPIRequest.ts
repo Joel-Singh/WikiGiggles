@@ -15,9 +15,3 @@ export default function sendWikipediaAPIRequest(params: Object) {
     throw error;
   }
 }
-
-export function getPageDataFromQueryResponse(
-  response: AxiosResponse,
-): Array<any> {
-  return response.data.query.pages;
-}
