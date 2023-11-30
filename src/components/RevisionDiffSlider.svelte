@@ -26,22 +26,24 @@
   }
 </script>
 
-<div>
-  <button
-    type="button"
-    aria-label="Next funny"
-    on:click={() => changeCurrentIndex(1)}>-&gt;</button
-  >
+<div class="flex flex-col w-screen justify-center align-middle items-center">
+  <nav class="text-sky-500 flex flex-row gap-10">
+    <button
+      type="button"
+      aria-label="Previous funny"
+      on:click={() => changeCurrentIndex(-1)}
+    >
+      &lt;-
+    </button>
+    <button
+      type="button"
+      aria-label="Next funny"
+      on:click={() => changeCurrentIndex(1)}>-&gt;</button
+    >
 
-  <button
-    type="button"
-    aria-label="Previous funny"
-    on:click={() => changeCurrentIndex(-1)}
-  >
-    &lt;-
-  </button>
+  </nav>
 
-  <p>
+  <p class="text-center">
     {#await revisionDiffs[currentIndex]}
       loading diff...
     {:then diff}
@@ -52,18 +54,6 @@
 </div>
 
 <style>
-  div {
-    @apply flex flex-col w-screen justify-center align-middle items-center;
-  }
-
-  p {
-    @apply text-center;
-  }
-
-  button {
-    @apply text-sky-500 w-20;
-  }
-
   button:hover {
     @apply underline;
   }
