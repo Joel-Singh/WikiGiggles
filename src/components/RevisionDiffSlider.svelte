@@ -29,6 +29,12 @@
 <div>
   <button
     type="button"
+    aria-label="Next funny"
+    on:click={() => changeCurrentIndex(1)}>-&gt;</button
+  >
+
+  <button
+    type="button"
     aria-label="Previous funny"
     on:click={() => changeCurrentIndex(-1)}
   >
@@ -43,16 +49,11 @@
     {/await}
   </p>
 
-  <button
-    type="button"
-    aria-label="Next funny"
-    on:click={() => changeCurrentIndex(1)}>-&gt;</button
-  >
 </div>
 
 <style>
   div {
-    @apply flex flex-row w-screen justify-center align-middle;
+    @apply flex flex-col w-screen justify-center align-middle items-center;
   }
 
   p {
