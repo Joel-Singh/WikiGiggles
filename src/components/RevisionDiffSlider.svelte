@@ -35,11 +35,13 @@
     &lt;-
   </button>
 
-  {#await revisionDiffs[currentIndex]}
-    loading diff...
-  {:then diff}
-    {diff}
-  {/await}
+  <p>
+    {#await revisionDiffs[currentIndex]}
+      loading diff...
+    {:then diff}
+      {diff}
+    {/await}
+  </p>
 
   <button
     type="button"
@@ -47,3 +49,21 @@
     on:click={() => changeCurrentIndex(1)}>-&gt;</button
   >
 </div>
+
+<style>
+  div {
+    @apply flex flex-row w-screen justify-center align-middle;
+  }
+
+  p {
+    @apply text-center;
+  }
+
+  button {
+    @apply text-sky-500 w-20;
+  }
+
+  button:hover {
+    @apply underline;
+  }
+</style>
