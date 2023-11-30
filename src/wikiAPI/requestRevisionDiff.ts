@@ -1,6 +1,6 @@
 import sendWikipediaAPIRequest from "./sendWikipediaAPIRequest";
 
-export default async function requestRevisionDiff(revisionId: string) {
+export default async function requestRevisionDiff(revisionId: number) {
   const params = {
     action: "compare",
     format: "json",

@@ -1,8 +1,8 @@
 <script lang="ts">
   import requestRevisionDiff from "../wikiAPI/requestRevisionDiff";
 
-  export let revisions: string[];
-  let revisionDiffs: Promise<String>[] = [];
+  export let revisions: number[];
+  let revisionDiffs: Promise<string>[] = [];
 
   let currentIndex = 0;
   function changeCurrentIndex(change: number) {

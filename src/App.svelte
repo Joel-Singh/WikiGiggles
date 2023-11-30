@@ -1,5 +1,7 @@
 <script lang="ts">
-  import FunnySearcher from "./components/funnyRevisionSearcher.svelte";
+  import RevisionDiffSlider from "./components/RevisionDiffSlider.svelte";
+import FunnySearcher from "./components/funnyRevisionSearcher.svelte";
+  let immediateRevisions: number[] = [];
 </script>
 
 <main class="h-full pt-3 flex flex-col items-center gap-2">
@@ -9,5 +11,6 @@
     >
   </h1>
 
-  <FunnySearcher/>
+  <FunnySearcher bind:immediateRevisions={immediateRevisions}/>
+  <RevisionDiffSlider revisions={immediateRevisions} />
 </main>

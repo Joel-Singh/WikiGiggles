@@ -2,9 +2,8 @@
   import getImmediateRevertEdits from "../wikiAPI/getImmediateRevertEdits";
 
   let pageToSearch = "";
-  let immediateRevisions = "";
+  export let immediateRevisions: number[] = [];
   let searchForImmediateRevisions = async () => {
-    // @ts-ignore
     immediateRevisions = await getImmediateRevertEdits(pageToSearch);
   };
 </script>
@@ -22,5 +21,3 @@
   class="w-2/5 justify-self-center text-sky-500 hover:underline"
   >Search for immediate revisions</button
 >
-
-<div id="immediate-revisions">{immediateRevisions}</div>
