@@ -6,10 +6,11 @@
   let revisionDiffs: Promise<string>[] = [];
 
   let currentIndex = 0;
+  $: finalIndex = revisions.length - 1;
   function changeCurrentIndex(change: number) {
     const clamp = (num: number, min: number, max: number) =>
       Math.min(Math.max(num, min), max);
-    currentIndex = clamp(currentIndex + change, 0, revisions.length - 1);
+    currentIndex = clamp(currentIndex + change, 0, finalIndex);
   }
 
   $: {
@@ -36,6 +37,7 @@
     >
       &lt;-
     </button>
+    <p>{currentIndex + 1} / {finalIndex + 1}</p>
     <button
       type="button"
       aria-label="Next funny"
