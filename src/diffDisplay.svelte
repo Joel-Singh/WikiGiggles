@@ -1,6 +1,5 @@
 <script lang="ts">
   export let diff: string;
-  console.log(diff);
 </script>
 
 <div class="diff-display">
