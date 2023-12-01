@@ -9,3 +9,13 @@ body {
   @apply text-zinc-900;
   @apply h-screen;
 }
+
+.diff-display del {
+  @apply bg-red-200;
+  text-decoration: none;
+}
+
+.diff-display ins {
+  @apply bg-green-200;
+  text-decoration: none;
+}

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import DiffDisplay from "../diffDisplay.svelte";
   import requestRevisionDiff from "../wikiAPI/requestRevisionDiff";
 
   export let revisions: number[];
@@ -47,7 +48,7 @@
     {#await revisionDiffs[currentIndex]}
       loading diff...
     {:then diff}
-      {diff}
+      <DiffDisplay {diff}  />
     {/await}
   </p>
 
