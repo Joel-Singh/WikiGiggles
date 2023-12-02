@@ -2,9 +2,9 @@
   export let diff: string;
 </script>
 
-<div class="diff-display">
+<p class="diff-display w-4/5 break-words" style="outline: solid red 1px;">
   {@html diff}
-</div>
+</p>
 
 <style>
 </style>

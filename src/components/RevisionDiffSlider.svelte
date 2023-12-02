@@ -45,14 +45,11 @@
     >
   </nav>
 
-  <p class="text-center">
-    {#await revisionDiffs[currentIndex]}
-      loading diff...
-    {:then diff}
-      <DiffDisplay {diff}  />
-    {/await}
-  </p>
-
+  {#await revisionDiffs[currentIndex]}
+    loading diff...
+  {:then diff}
+    <DiffDisplay {diff} />
+  {/await}
 </div>
 
 <style>
