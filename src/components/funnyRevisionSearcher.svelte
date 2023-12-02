@@ -19,7 +19,7 @@
   <button
     on:click={searchForImmediateRevisions}
     type="button"
-    class="w-2/5 justify-self-center text-sky-500 hover:underline"
+    class="w-max justify-self-center text-sky-500 hover:underline"
     >Search for immediate revisions</button
   >
 </div>
