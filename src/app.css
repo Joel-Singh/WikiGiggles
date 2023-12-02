@@ -3,11 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: sans-serif;
-  @apply p-1;
-  @apply bg-white;
-  @apply text-zinc-900;
-  @apply h-screen;
+  @apply p-0;
 }
 
 .diff-display del {
