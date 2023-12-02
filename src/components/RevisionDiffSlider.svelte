@@ -1,7 +1,7 @@
 <script lang="ts">
   import DiffDisplay from "../diffDisplay.svelte";
   import requestRevisionDiff from "../wikiAPI/requestRevisionDiff";
-    import SliderControls from "./SliderControls.svelte";
+  import SliderControls from "./SliderControls.svelte";
 
   export let revisions: number[];
   let revisionDiffs: Promise<string>[] = [];
