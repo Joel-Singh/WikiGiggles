@@ -1,5 +1,5 @@
 <script lang="ts">
-    import DiffDisplay from "../diffDisplay.svelte";
+  import DiffDisplay from "../diffDisplay.svelte";
   import requestRevisionDiff from "../wikiAPI/requestRevisionDiff";
 
   export let revisions: number[];
@@ -24,7 +24,7 @@
       }
     }
 
-    updateRevisionDiffs()
+    updateRevisionDiffs();
   }
 </script>
 
