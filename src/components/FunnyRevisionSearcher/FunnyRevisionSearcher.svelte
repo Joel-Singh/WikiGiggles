@@ -9,6 +9,7 @@
     if (resultOfGetImmediateRevertEdits === "page is missing") {
       errorMsg = "Page doesn't exist";
     } else {
+      errorMsg = "";
       immediateRevisions = resultOfGetImmediateRevertEdits;
     }
   };
