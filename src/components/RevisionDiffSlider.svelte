@@ -43,7 +43,6 @@
       aria-label="Next funny"
       on:click={() => changeCurrentIndex(1)}>-&gt;</button
     >
-
   </nav>
 
   <p class="text-center">
