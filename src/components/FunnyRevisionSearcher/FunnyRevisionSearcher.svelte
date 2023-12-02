@@ -1,11 +1,19 @@
 <script lang="ts">
   import getImmediateRevertEdits from "../../wikiAPI/getImmediateRevertEdits";
 
-  let pageToSearch = "";
   export let immediateRevisions: number[] | null = null;
+
+  let pageToSearch = "";
   let searchForImmediateRevisions = async () => {
-    immediateRevisions = await getImmediateRevertEdits(pageToSearch);
+    const resultOfGetImmediateRevertEdits = await getImmediateRevertEdits(pageToSearch);
+    if (resultOfGetImmediateRevertEdits === "page is missing") {
+      errorMsg = "Page doesn't exist";
+    } else {
+      immediateRevisions = resultOfGetImmediateRevertEdits;
+    }
   };
+
+  let errorMsg = "";
 </script>
 
 <div class="flex flex-col items-center w-2/3">
@@ -22,4 +30,6 @@
     class="w-max justify-self-center text-sky-500 hover:underline"
     >Search for immediate revisions</button
   >
+
+  <p>{errorMsg}</p>
 </div>
