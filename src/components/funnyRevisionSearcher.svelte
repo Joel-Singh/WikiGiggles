@@ -2,7 +2,7 @@
   import getImmediateRevertEdits from "../wikiAPI/getImmediateRevertEdits";
 
   let pageToSearch = "";
-  export let immediateRevisions: number[] = [];
+  export let immediateRevisions: number[] | null = null;
   let searchForImmediateRevisions = async () => {
     immediateRevisions = await getImmediateRevertEdits(pageToSearch);
   };

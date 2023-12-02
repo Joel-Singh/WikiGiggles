@@ -1,7 +1,7 @@
 <script lang="ts">
   import RevisionDiffSlider from "./components/RevisionDiffSlider.svelte";
   import FunnySearcher from "./components/funnyRevisionSearcher.svelte";
-  let immediateRevisions: number[] = [];
+  let immediateRevisions: number[] | null = null;
 </script>
 
 <main class="h-full pt-3 flex flex-col items-center gap-2">
@@ -12,5 +12,9 @@
   </h1>
 
   <FunnySearcher bind:immediateRevisions />
-  <RevisionDiffSlider revisions={immediateRevisions} />
+  {#if immediateRevisions === null}
+    <p>Type in a page</p>
+  {:else}
+    <RevisionDiffSlider revisions={immediateRevisions} />
+  {/if}
 </main>
