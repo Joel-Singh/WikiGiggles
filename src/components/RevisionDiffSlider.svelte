@@ -1,5 +1,5 @@
 <script lang="ts">
-  import DiffDisplay from "../diffDisplay.svelte";
+  import DiffDisplay from "./DiffDisplay.svelte";
   import requestRevisionDiff from "../wikiAPI/requestRevisionDiff";
   import SliderControls from "./SliderControls.svelte";
 
