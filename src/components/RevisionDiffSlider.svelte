@@ -1,20 +1,18 @@
 <script lang="ts">
   import DiffDisplay from "../diffDisplay.svelte";
   import requestRevisionDiff from "../wikiAPI/requestRevisionDiff";
+    import SliderControls from "./SliderControls.svelte";
 
   export let revisions: number[];
   let revisionDiffs: Promise<string>[] = [];
 
-  let currentIndex = 0;
+  let slideNumber = 1;
   $: finalIndex = revisions.length - 1;
-  function changeCurrentIndex(change: number) {
-    const clamp = (num: number, min: number, max: number) =>
-      Math.min(Math.max(num, min), max);
-    currentIndex = clamp(currentIndex + change, 0, finalIndex);
-  }
 
   $: {
     revisionDiffs = [];
+    updateRevisionDiffs();
+
     async function updateRevisionDiffs() {
       revisionDiffs = [];
       for (let i = 0; i < revisions.length; i++) {
@@ -23,29 +21,13 @@
         await request;
       }
     }
-
-    updateRevisionDiffs();
   }
 </script>
 
 <div class="flex flex-col w-screen justify-center align-middle items-center">
-  <nav class="text-sky-500 flex flex-row gap-10">
-    <button
-      type="button"
-      aria-label="Previous funny"
-      on:click={() => changeCurrentIndex(-1)}
-    >
-      &lt;-
-    </button>
-    <p>{currentIndex + 1} / {finalIndex + 1}</p>
-    <button
-      type="button"
-      aria-label="Next funny"
-      on:click={() => changeCurrentIndex(1)}>-&gt;</button
-    >
-  </nav>
+  <SliderControls bind:slideNumber lastSlideNumber={finalIndex} />
 
-  {#await revisionDiffs[currentIndex]}
+  {#await revisionDiffs[slideNumber - 1]}
     loading diff...
   {:then diff}
     <DiffDisplay {diff} />
