@@ -1,5 +1,5 @@
 <script lang="ts">
-  import getImmediateRevertEdits from "../wikiAPI/getImmediateRevertEdits";
+  import getImmediateRevertEdits from "../../wikiAPI/getImmediateRevertEdits";
 
   let pageToSearch = "";
   export let immediateRevisions: number[] | null = null;
