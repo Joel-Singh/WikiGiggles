@@ -3,7 +3,7 @@ import addByteDifferenceToRevisions from "./util/addByteDifferenceToRevisions";
 import filterImmediateRevertEdits from "./util/filterImmediateRevertEdits";
 import type revision from "./util/revision";
 
-export default async function getImmediateRevertEdits(page: string): Promise<number[] | "page is missing"> {
+export default async function getImmediateRevertEdits(page: string): Promise<number[] | Error> {
   const mostRecent500RevisionsParams = {
     action: "query",
     format: "json",
@@ -16,14 +16,18 @@ export default async function getImmediateRevertEdits(page: string): Promise<num
 
 
   const response = await sendWikipediaAPIRequest(mostRecent500RevisionsParams);
-
   if (isPageMissing(response)) {
-    return "page is missing";
+    return new Error("page doesn't exist");
   }
 
   const parsedRevisions = parseRevisions(response);
 
   const parsedRevisionsWithByteDifference = addByteDifferenceToRevisions(parsedRevisions);
+
+  const immediateRevertEdits = filterImmediateRevertEdits(parsedRevisionsWithByteDifference);
+  if (immediateRevertEdits.length === 0) {
+    return new Error("Page has no funnies")
+  }
 
   return filterImmediateRevertEdits(parsedRevisionsWithByteDifference);
 

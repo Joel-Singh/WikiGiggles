@@ -11,8 +11,8 @@
     }
 
     const resultOfGetImmediateRevertEdits = await getImmediateRevertEdits(pageToSearch);
-    if (resultOfGetImmediateRevertEdits === "page is missing") {
-      errorMsg = "Page doesn't exist";
+    if (resultOfGetImmediateRevertEdits instanceof Error) {
+      errorMsg = resultOfGetImmediateRevertEdits.message;
       return;
     } else {
       errorMsg = "";
