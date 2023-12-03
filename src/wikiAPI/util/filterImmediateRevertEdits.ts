@@ -1,4 +1,4 @@
-import { type revisionnWithByteDifference } from "./addByteDifferenceToRevisions";
+import { type revisionWithByteDifference } from "./addByteDifferenceToRevisions";
 import type revision from "./revision";
 
 /**
