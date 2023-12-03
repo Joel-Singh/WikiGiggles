@@ -19,10 +19,10 @@ export default function filterImmediateRevertEdits(
     const hasManualRevertTag =
       revisions[index].tags.includes("mw-manual-revert");
 
-    const correspondingByteDifference =
+    const hasCorrespondingByteDifference =
       -prevRevision.byteDifference === curRevision.byteDifference;
 
-    if (hasManualRevertTag && correspondingByteDifference) {
+    if (hasManualRevertTag && hasCorrespondingByteDifference) {
       immediatelyRevertedEdits.push(curRevision.revid);
     }
   }
