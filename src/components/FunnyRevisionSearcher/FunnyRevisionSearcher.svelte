@@ -5,9 +5,15 @@
 
   let pageToSearch = "";
   let searchForImmediateRevisions = async () => {
+    if (pageToSearch === "") {
+      errorMsg = "Enter a page";
+      return;
+    }
+
     const resultOfGetImmediateRevertEdits = await getImmediateRevertEdits(pageToSearch);
     if (resultOfGetImmediateRevertEdits === "page is missing") {
       errorMsg = "Page doesn't exist";
+      return;
     } else {
       errorMsg = "";
       immediateRevisions = resultOfGetImmediateRevertEdits;
