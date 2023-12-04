@@ -1,7 +1,22 @@
 <script lang="ts">
-  export let errorMsg: string;
+  import { tick } from "svelte";
+  import { fade } from "svelte/transition";
+  let errorMsg: string = "";
+
+  export const changeErrorMsg = (newMsg: string) => {
+    playTransition();
+    errorMsg = newMsg;
+  };
+
+  let visible = true;
+  async function playTransition() {
+    visible = false;
+    setTimeout(() => visible = true, 400);
+  }
 </script>
 
-<p>
-  {errorMsg}
-</p>
+{#if visible}
+  <p transition:fade>
+    {errorMsg}
+  </p>
+{/if}

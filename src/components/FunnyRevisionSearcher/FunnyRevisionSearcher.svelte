@@ -3,21 +3,21 @@
   import ErrorMsg from "./ErrorMsg.svelte";
 
   export let immediateRevisions: number[] | null = null;
-  let errorMsg = "";
+  let changeErrorMsg: (newMsg: string) => void;
 
   let pageToSearch = "";
   let searchForImmediateRevisions = async () => {
     if (pageToSearch === "") {
-      errorMsg = "Enter a page";
+      changeErrorMsg("Enter a page");
       return;
     }
 
     const resultOfGetImmediateRevertEdits = await getImmediateRevertEdits(pageToSearch);
     if (resultOfGetImmediateRevertEdits instanceof Error) {
-      errorMsg = resultOfGetImmediateRevertEdits.message;
+      changeErrorMsg(resultOfGetImmediateRevertEdits.message);
       return;
     } else {
-      errorMsg = "";
+      changeErrorMsg('');
       immediateRevisions = resultOfGetImmediateRevertEdits;
     }
   };
@@ -38,5 +38,5 @@
     >Search for immediate revisions</button
   >
 
-  <ErrorMsg {errorMsg} />
+  <ErrorMsg bind:changeErrorMsg={changeErrorMsg} />
 </div>
