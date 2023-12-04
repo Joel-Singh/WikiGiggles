@@ -15,7 +15,7 @@
   $: prettyDiff = makeDiffPretty(diff);
 </script>
 
-<p class="diff-display w-4/5 h-[70vh] break-words overflow-y-scroll" style="outline: solid red 1px;">
+<p class="diff-display w-4/5 h-[70vh] break-words overflow-y-scroll">
   {@html prettyDiff}
 </p>
 
