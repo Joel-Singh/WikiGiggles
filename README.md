@@ -6,6 +6,9 @@ It currently finds revisions that were immediately reverted and displays them. I
 # Technologies
 Uses Svelte, Vite, Typescript, and Tailwind
 
+# Live Demo
+https://joel-singh.github.io/WikiGiggles/
+
 # Inspiration
 A saw a couple of projects that utilized the mediaWiki API and I wanted to try doing the same thing. As I was perusing wikipedia I noticed some funny revisions and thought the finding of those could be automated.
 
