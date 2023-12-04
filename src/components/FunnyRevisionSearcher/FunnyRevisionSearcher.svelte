@@ -1,7 +1,9 @@
 <script lang="ts">
   import getImmediateRevertEdits from "../../wikiAPI/getImmediateRevertEdits";
+  import ErrorMsg from "./ErrorMsg.svelte";
 
   export let immediateRevisions: number[] | null = null;
+  let errorMsg = "";
 
   let pageToSearch = "";
   let searchForImmediateRevisions = async () => {
@@ -19,8 +21,6 @@
       immediateRevisions = resultOfGetImmediateRevertEdits;
     }
   };
-
-  let errorMsg = "";
 </script>
 
 <div class="flex flex-col items-center w-2/3">
@@ -38,5 +38,5 @@
     >Search for immediate revisions</button
   >
 
-  <p>{errorMsg}</p>
+  <ErrorMsg {errorMsg} />
 </div>
