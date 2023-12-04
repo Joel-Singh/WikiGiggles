@@ -11,6 +11,7 @@
 
   $: {
     revisionDiffs = [];
+    resetSlideNumber();
     updateRevisionDiffs();
 
     async function updateRevisionDiffs() {
@@ -21,6 +22,10 @@
         await request;
       }
     }
+  }
+
+  function resetSlideNumber() {
+    slideNumber = 1;
   }
 </script>
 
