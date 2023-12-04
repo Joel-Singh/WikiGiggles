@@ -11,6 +11,7 @@
     "prebuild": "npm run clean",
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages --dist ./dist",
     "prepreview": "npm run build",
     "preview": "vite preview",
