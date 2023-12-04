@@ -11,6 +11,7 @@
     "prebuild": "npm run clean",
     "dev": "vite",
     "build": "vite build",
+    "deploy": "gh-pages --dist ./dist",
     "prepreview": "npm run build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
@@ -19,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.2",
+    "gh-pages": "^6.1.0",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
